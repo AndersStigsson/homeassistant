@@ -1,0 +1,60 @@
+Balkong_group:
+  name: Balkong
+  entities:
+  - sensor.balkong_temperatur
+  - sensor.balkong_batteri
+  - sensor.balkong_lufttryck
+  - sensor.balkong_spanning
+  - sensor.balkong_lankkvalitet
+  - sensor.balkong_luftfuktighet
+  
+  
+Sovrum_group:
+  name: Sovrum
+  entities:
+  - sensor.sovrum_temperatur
+  - sensor.sovrum_batteri
+  - sensor.sovrum_lufttryck
+  - sensor.sovrum_spanning
+  - sensor.sovrum_lankkvalitet
+  - sensor.sovrum_luftfuktighet
+Sovrum_lampor:
+  name: Sovrum Lampor
+  entities:
+  - light.bedroom_ceiling
+  - light.bedroom_window_lamp
+
+Kitchen_ceiling_leds:
+  name: Kitchen ceiling LED
+  entities:
+  - light.kitchen_ceiling_led_1
+  - light.kitchen_ceiling_led_2
+  - light.kitchen_ceiling_led_3
+  - light.kitchen_ceiling_led_4
+
+Kitchen_cabinet_leds:
+  name: Kitchen cabinets LEDs
+  entities:
+  - light.kitchen_led_1
+  - light.kitchen_led_2
+  
+Kitchen_lights:
+  name: Kökslampor
+  entities:
+  - light.kitchen_cabins
+  - light.kitchen_ceiling_spots
+  - light.kitchen_table
+
+Office_ceiling_lamps:
+  name: Kontorets taklampor
+  entities:
+  - light.office_ceiling_lamp_1
+  - light.office_ceiling_lamp_2
+  - light.office_ceiling_lamp_3
+  - light.office_ceiling_lamp_4
+  - light.office_ceiling_lamp_5
+Living_room_lamps:
+  name: Vardagsrum
+  entities:
+  - light.living_room
+  - light.living_room_ceiling

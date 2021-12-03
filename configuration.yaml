@@ -1,0 +1,86 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+   use_x_forwarded_for: true
+   trusted_proxies: 172.20.0.2
+   #base_url: 0.0.0.0:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+    #media_player:
+    #  - platform: spotify
+    #    client_id: c47356ba2205479ab5b37bb5d5ec59af
+    #    client_secret: e8e750bd6fc344f489839c415d5794cc
+
+frontend:
+    themes: !include themes.yaml
+
+homeassistant:
+    customize: !include customize.yaml
+    #    whitelist_external_dirs:
+    #    - "/home/homeassistant/rpi_pictures/"
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+#breaking_changes:
+
+telegram_bot:
+  - platform: polling
+    api_key: 1006706750:AAHXyqONulpJFqaiTALBoXqShYcmpvQ1NvM
+    allowed_chat_ids:
+      - 1053600301
+      - 1018343983
+
+camera: !include cameras.yaml
+
+lovelace:
+  mode: yaml
+  resources:
+    - url: /hacsfiles/light-entity-card/light-entity-card.js
+      type: module
+    - url: /hacsfiles/lovelace-layout-card/layout-card.js
+      type: module
+    - url: /hacsfiles/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js
+      type: module
+    - url: /hacsfiles/lovelace-xiaomi-vacuum-map-card/xiaomi-vacuum-map-card.js
+      type: module
+mqtt:
+  broker: "172.17.0.1" # This will have to be your mqtt broker
+  discovery: true
+  port: 1883
+  username: "hass"
+  password: "hass"
+  client_id: homeassistant_1
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
+
+input_boolean:
+  zigbee_permit_join:
+    name: Allow devices to join
+    initial: off
+    icon: mdi:cellphone-wireless
+
+timer:
+  zigbee_permit_join:
+    name: Time remaining
+    duration: 600 # Updated this to the number of seconds you wish
+
+    #0x00158d0002303654
+
+sensor:
+  - platform: mqtt
+    name: Bridge state
+    state_topic: "zigbee2mqtt/bridge/state"
+    icon: mdi:router-wireless
+  

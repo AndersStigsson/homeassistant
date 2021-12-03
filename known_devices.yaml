@@ -1,0 +1,14 @@
+anders:
+  hide_if_away: true
+  icon:
+  mac:  90:78:b2:59:4e:2a
+  name: Anders
+  picture: /local/anders.jpg
+  track: true
+amanda:
+  hide_if_away: true
+  icon: 
+  mac:  20:39:56:48:7b:33
+  name: Amanda
+  picture: /local/amanda.jpg
+  track: true

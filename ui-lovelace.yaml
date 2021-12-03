@@ -1,0 +1,264 @@
+#title: My Awesome Home
+#views:
+#    title: Example
+#    cards:
+#      - type: entities
+#        title: Zigbee
+#        entities:
+#        - entity: input_boolean.zigbee_permit_join
+#        - entity: timer.zigbee_permit_join
+#        - entity: sensor.bridge_state
+#        show_header_toggle: false
+        
+        
+title: My awesome home
+#resources: 
+#www/community/light-entity-card/light-entity-card.js
+#  - url: /local/community/light-entity-card/light-entity-card.js
+#    type: module
+# - url: /community_plugin/compact-custom-header/compact-custom-header.js
+#   type: module
+# - url: /community_plugin/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js
+#   type: module
+#cch:
+#  swipe: true
+#  exceptions:
+#    - conditions:
+#        user_agent: Mobile
+#      config:
+#        hide_tabs: 0,1
+#    - conditions:
+#        user: Tablet
+#      config:
+#        hide_tabs: 0,1,2
+views:
+    # View tab title.
+  - title: Hem
+    type: custom:horizontal-layout
+    layout:
+      max_cols: 2
+    cards:
+      - type: "custom:light-entity-card"
+        entity: light.wled
+      - type: picture-glance
+        entities:
+        - entity: camera.camera
+        camera_image: camera.camera
+        camera_type: live
+      - type: custom:xiaomi-vacuum-map-card
+        entity: vacuum.roborock_vacuum_s5
+        map_source:
+          camera: camera.xiaomi_cloud_map_extractor
+        calibration_source:
+          camera: true
+        map_modes:
+          - template: vacuum_clean_zone
+          - template: vacuum_clean_zone_predefined
+            predefined_selections:
+              - zones: [[ 32800, 24767, 38236, 30131 ]]
+                label:
+                  text: "Bedroom"
+                  x: 35932
+                  y: 30339
+                  offset_y: 35
+                icon:
+                  name: "mdi:bed"
+                  x: 35932
+                  y: 26339
+  - title: System
+    cards:
+    - type: entities
+      title: Zigbee
+      entities:
+      - entity: input_boolean.zigbee_permit_join
+      - entity: timer.zigbee_permit_join
+      - entity: sensor.bridge_state
+      show_header_toggle: false
+  - title: Mobile
+    cards:
+    - type: glance
+      title: Vardagsrum
+      show_name: true
+      entities:
+      - entity: group.living_room_lamps
+        tap_action:
+          action: toggle
+        name: Alla
+      - entity: light.vitrin_2
+        tap_action:
+          action: toggle
+        name: Vitrinskåp
+      - entity: light.living_room_window
+        tap_action:
+          action: toggle
+        name: Fönster
+      - entity: light.living_room_ceiling
+        tap_action:
+          action: toggle
+        name: Taket
+    - type: glance
+      title: Köket
+      show_name: true
+      entities:
+      - entity: group.kitchen_lights
+        tap_action:
+          action: toggle
+        name: Alla
+      - entity: light.kitchen_cabins
+        tap_action:
+          action: toggle
+        name: LED Skåp
+      - entity: light.kitchen_table
+        tap_action:
+          action: toggle
+        name: Bordet
+      - entity: light.kitchen_ceiling_spots
+        tap_action:
+          action: toggle
+        name: LED Taket
+    - type: glance
+      title: Kontoret
+      show_name: true
+      entities:
+      - entity: light.kontoret
+        tap_action:
+          action: toggle
+        name: Alla
+      - entity: light.kontoret_window
+        tap_action:
+          action: toggle
+        name: Fönstret
+      - entity: group.office_ceiling_lamps
+        tap_action:
+          action: toggle
+        name: Taket
+    - type: glance
+      title: Sovrummet
+      show_name: true
+      entities:
+      - entity: light.sovrum
+        tap_action:
+          action: toggle
+        name: Alla
+      - entity: light.bedroom_window_lamp
+        tap_action:
+          action: toggle
+        name: Fönster
+      - entity: light.bedroom_ceiling
+        tap_action:
+          action: toggle
+        name: Taket
+  - title: Tablet
+    cards:
+    - type: glance
+      title: Vardagsrum
+      show_name: true
+      entities:
+      - entity: light.living_room
+        tap_action:
+          action: toggle
+        name: Alla
+      - entity: light.vitrin_2
+        tap_action:
+          action: toggle
+        name: Vitrinskåp
+      - entity: light.living_room_window
+        tap_action:
+          action: toggle
+        name: Fönster
+      - entity: light.living_room_ceiling
+        tap_action:
+          action: toggle
+        name: Taket
+    - type: glance
+      title: Köket
+      show_name: true
+      entities:
+      - entity: group.kitchen_lights
+        tap_action:
+          action: toggle
+        name: Alla
+      - entity: light.kitchen_cabins
+        tap_action:
+          action: toggle
+        name: LED Skåp
+      - entity: light.kitchen_table
+        tap_action:
+          action: toggle
+        name: Bordet
+      - entity: light.kitchen_ceiling_spots
+        tap_action:
+          action: toggle
+        name: LED Taket
+    - type: glance
+      title: Kontoret
+      columns: 4
+      show_name: true
+      entities:
+      - entity: sensor.utomhus_temperatur
+        name: Temp
+      - entity: sensor.utomhus_luftfuktighet
+        name: Luftfuktighet
+      - entity: sensor.utomhus_lufttryck
+        name: Lufttryck
+      - entity: sensor.utomhus_batteri
+        name: Batteri
+      - entity: light.kontoret
+        tap_action:
+          action: toggle
+        name: Alla
+      - entity: light.kontoret_window
+        tap_action:
+          action: toggle
+        name: Fönstret
+      - entity: group.office_ceiling_lamps
+        tap_action:
+          action: toggle
+        name: Taket
+    - type: glance
+      title: Sovrummet
+      columns: 4
+      show_name: true
+      entities:
+      - entity: sensor.sovrum_temperatur
+        name: Temp
+      - entity: sensor.sovrum_luftfuktighet
+        name: Luftfuktighet
+      - entity: sensor.sovrum_lufttryck
+        name: Lufttryck
+      - entity: sensor.sovrum_batteri
+        name: Batteri
+      - entity: light.sovrum
+        tap_action:
+          action: toggle
+        name: Alla
+      - entity: light.bedroom_window_lamp
+        tap_action:
+          action: toggle
+        name: Fönster
+      - entity: light.bedroom_ceiling
+        tap_action:
+          action: toggle
+        name: Taket
+    - type: glance
+      title: Balkongen
+      columns: 4
+      show_name: true
+      entities:
+      - entity: sensor.balkong_temperatur
+        name: Temp
+      - entity: sensor.balkong_luftfuktighet
+        name: Luftfuktighet
+      - entity: sensor.balkong_lufttryck
+        name: Lufttryck
+      - entity: sensor.balkong_batteri
+        name: Batteri
+  - title: Maintenance
+    panel: true
+    cards:
+    - type: picture-glance
+      entities:
+      - entity: camera.camera
+      camera_image: camera.camera
+      camera_type: live
+
