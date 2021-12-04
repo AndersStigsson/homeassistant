@@ -139,7 +139,7 @@
     alias: 'Play Rocky Theme when cleaning done'
     trigger:
       platform: template
-      value_template: "{{ is_state('vacuum.xiaomi_vacuum_cleaner','returning') }}"
+      value_template: "{{ is_state('vacuum.roborock_vacuum_s5','returning') }}"
     action:
       - service: media_player.select_source
         data:

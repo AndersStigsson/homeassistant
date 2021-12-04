@@ -14,8 +14,8 @@ tts:
 
     #media_player:
     #  - platform: spotify
-    #    client_id: c47356ba2205479ab5b37bb5d5ec59af
-    #    client_secret: e8e750bd6fc344f489839c415d5794cc
+    #    client_id: !secret spotify_client_id
+    #    client_secret: !secret spotify_client_secret
 
 frontend:
     themes: !include themes.yaml
@@ -33,7 +33,7 @@ script: !include scripts.yaml
 
 telegram_bot:
   - platform: polling
-    api_key: 1006706750:AAHXyqONulpJFqaiTALBoXqShYcmpvQ1NvM
+    api_key: !secret telegram_api_key
     allowed_chat_ids:
       - 1053600301
       - 1018343983
@@ -55,8 +55,8 @@ mqtt:
   broker: "172.17.0.1" # This will have to be your mqtt broker
   discovery: true
   port: 1883
-  username: "hass"
-  password: "hass"
+  username: !secret mqtt_username
+  password: !secret mqtt_password
   client_id: homeassistant_1
   birth_message:
     topic: 'hass/status'
