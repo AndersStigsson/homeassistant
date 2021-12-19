@@ -1,4 +1,8 @@
-sensor:
+  - platform: mqtt
+    name: Bridge state
+    state_topic: "zigbee2mqtt/bridge/state"
+    icon: mdi:router-wireless
+
   - platform: mqtt
     name: Dart Plug
     state_topic: "zigbee2mqtt/dart_plug"
