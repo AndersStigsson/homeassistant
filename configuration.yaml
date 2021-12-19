@@ -84,3 +84,4 @@ sensor:
     state_topic: "zigbee2mqtt/bridge/state"
     icon: mdi:router-wireless
   
+  !include devices.yaml
