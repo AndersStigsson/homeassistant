@@ -85,3 +85,6 @@ sensor: !include sensors.yaml
 switch: !include switches.yaml
 alexa:
   smart_home:
+binary_sensor:
+  - platform: workday
+    country: SE
