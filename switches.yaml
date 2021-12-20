@@ -1,0 +1,8 @@
+  - platform: mqtt
+    name: Dart Plug
+    state_topic: "zigbee2mqtt/0xb4e3f9fffe8c101b"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    payload_off: "OFF"
+    payload_on: "ON"
+    value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/0xb4e3f9fffe8c101b/set"
