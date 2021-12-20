@@ -154,5 +154,17 @@
         data:
           entity_id: media_player.spotify
           source: "Anders's Echo Plus"
-     
-
+  - id: 'christmas_tree_on'
+    alias: 'Turn on christmass tree at specific times'
+    trigger:
+      platform: time
+      at: "16:30"
+    action:
+      - service: christmas_tree_plug.turn_on
+  - id: 'christmas_tree_off'
+    alias: 'Turn off christmass tree at specific times'
+    trigger:
+      platform: time
+      at: "23:00"
+    action:
+      - service: christmas_tree_plug.turn_off
