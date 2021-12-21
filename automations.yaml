@@ -155,7 +155,7 @@
           entity_id: media_player.spotify
           source: "Anders's Echo Plus"
   - id: 'christmas_tree_on_workday'
-    alias: 'Turn on christmass tree at specific times'
+    alias: 'Turn on christmas tree at specific times'
     trigger:
       platform: time
       at: 
@@ -168,9 +168,11 @@
     action:
       - service: switch.turn_on
         target:
-          entity_id: switch.christmas_tree_plug
+          entity_id: 
+            - switch.christmas_tree_plug
+            - switch.stair_star_plug
   - id: 'christmas_tree_off_workday'
-    alias: 'Turn off christmass tree at specific times'
+    alias: 'Turn off christmas tree at specific times'
     trigger:
       platform: time
       at: 
@@ -183,4 +185,6 @@
     action:
       - service: switch.turn_off
         target:
-          entity_id: switch.christmas_tree_plug
+          entity_id: 
+            - switch.christmas_tree_plug
+            - switch.stair_star_plug

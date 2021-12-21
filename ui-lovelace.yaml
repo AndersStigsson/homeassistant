@@ -75,6 +75,10 @@ views:
           tap_action:
             action: toggle
           name: Trappstjärna
+        - entity: switch.dart_plug
+          tap_action:
+            action: toggle
+          name: Dart
   - title: System
     cards:
     - type: entities
