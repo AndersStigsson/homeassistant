@@ -65,6 +65,12 @@ views:
                   name: "mdi:bed"
                   x: 35932
                   y: 26339
+      - type: glance
+        entities:
+        - entity: switch.christmas_tree_plug
+          tap_action:
+            action: toggle
+          name: Julgran
   - title: System
     cards:
     - type: entities
