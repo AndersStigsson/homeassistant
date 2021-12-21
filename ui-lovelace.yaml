@@ -79,6 +79,10 @@ views:
           tap_action:
             action: toggle
           name: Dart
+        - entity: switch.plug_1
+          tap_action:
+            action: toggle
+          name: Extra Plug
   - title: System
     cards:
     - type: entities
