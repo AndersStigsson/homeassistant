@@ -34,6 +34,10 @@ views:
                   y: 26339
       - type: glance
         entities:
+        - entity: group.switches_lights
+          tap_action:
+            action: toggle
+          name: Alla
         - entity: switch.christmas_tree_plug
           tap_action:
             action: toggle

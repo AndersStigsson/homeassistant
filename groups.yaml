@@ -58,3 +58,10 @@ Living_room_lamps:
   entities:
   - light.living_room
   - light.living_room_ceiling
+switches_lights:
+  name: Alla switchar
+  entities:
+  - switch.christmas_tree_plug
+  - switch.dart_plug
+  - switch.stair_star_plug
+  - switch.plug_1
