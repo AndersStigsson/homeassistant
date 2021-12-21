@@ -71,6 +71,10 @@ views:
           tap_action:
             action: toggle
           name: Julgran
+        - entity: switch.stair_star_plug
+          tap_action:
+            action: toggle
+          name: Trappstjärna
   - title: System
     cards:
     - type: entities
