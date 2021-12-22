@@ -80,7 +80,7 @@ timer:
     duration: 600 # Updated this to the number of seconds you wish
 
     #0x00158d0002303654
-
+light: !include lights.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 alexa:
