@@ -1,5 +1,5 @@
   - platform: mqtt
-    name: Dart Plug
+    name: Kitchen table
     state_topic: "zigbee2mqtt/0x0017880104a1c1f4"
     availability_topic: "zigbee2mqtt/bridge/state"
     payload_off: "OFF"
