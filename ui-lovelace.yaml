@@ -7,8 +7,6 @@ views:
     cards:
       - type: "custom:light-entity-card"
         entity: light.wled
-      - type: "custom:light-entity-card"
-        entity: light.kitchen_table
       - type: picture-glance
         entities:
         - entity: camera.camera

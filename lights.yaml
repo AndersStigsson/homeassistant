@@ -1,8 +1,13 @@
-  - platform: mqtt
-    name: Kitchen table
-    state_topic: "zigbee2mqtt/0x0017880104a1c1f4"
-    availability_topic: "zigbee2mqtt/bridge/state"
-    payload_off: "OFF"
-    payload_on: "ON"
-    value_template: "{{ value_json.state }}"
-    command_topic: "zigbee2mqtt/0x0017880104a1c1f4/set"
+#  - platform: mqtt
+#    name: Kitchen table
+#    state_topic: "zigbee2mqtt/0x0017880104a1c1f4"
+#    availability_topic: "zigbee2mqtt/bridge/state"
+#    value_template: "{{ value_json.state }}"
+#    command_topic: "zigbee2mqtt/0x0017880104a1c1f4/set"
+#    payload_off: "OFF"
+#    payload_on: "ON"
+#    brightness_value_template: '{{ value_json.brightness }}'
+#    color_temp_value_template: '{{ value_json.color_temp }}'
+#    #brightness: brightness: VALUE
+#    #color_temp: color_temp: VALUE
+#    #color_temp_startup: color_temp_startup: VALUE
