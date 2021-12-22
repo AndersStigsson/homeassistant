@@ -88,3 +88,9 @@ alexa:
 binary_sensor:
   - platform: workday
     country: SE
+
+verisure:
+  username: !secret verisure_username
+  password: !secret verisure_password
+  alarm: true
+  smartplugs: false
