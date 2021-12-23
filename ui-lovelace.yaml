@@ -75,7 +75,7 @@ views:
     layout:
       max_cols: 3
     cards:
-      - type: "custome:hui-element"
+      - type: "custom:hui-element"
         card_type: horizontal_stack
         cards:
           - entity: light.kitchen_table
