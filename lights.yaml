@@ -1,10 +1,22 @@
   - platform: mqtt
-    name: Kitchen table
-    schema: "json"
+    schema: json
+    name: Dart Wall 1
     state_topic: "zigbee2mqtt/0x0017880104a1c1f4"
     availability_topic: "zigbee2mqtt/bridge/state"
     #value_template: "{{ value_json.state }}"
     command_topic: "zigbee2mqtt/0x0017880104a1c1f4/set"
+    #payload_off: "OFF"
+    #payload_on: "ON"
+    brightness: true
+    brightness_scale: 254
+    color_temp: true
+  - platform: mqtt
+    schema: json
+    name: Dart Wall 2
+    state_topic: "zigbee2mqtt/0x0017880104a1cb01"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    #value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/0x0017880104a1cb01/set"
     #payload_off: "OFF"
     #payload_on: "ON"
     brightness: true
