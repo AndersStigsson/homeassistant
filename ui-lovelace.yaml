@@ -85,7 +85,9 @@ views:
       - type: "custom:light-entity-card"
         entity: light.wled
       - type: light
-        entity: light.kitchen_table
+        entity: light.dart_wall_1
+      - type: light
+        entity: light.dart_wall_2
       - type: picture-glance
         entities:
         - entity: camera.camera
