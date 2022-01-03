@@ -50,18 +50,18 @@ button_card_templates:
         - grid-template-rows: 33% auto
         - grid-template-columns: 33% auto
       icon:
-        - width: 14px
+        - width: 28px
         - padding: 0px 0px 0px 0px
         - color: var(--button-card-light-color-no-temperature)
       label:
-        - font-size: 8px
+        - font-size: 12px
         - justify-self: right
         - padding: 0px 0px 0px 0px
         - color: var(--secondary-text-color)
       name:
         - justify-self: middle
         - align-self: end
-        - font-size: 10px
+        - font-size: 14px
         - padding: 0px 0px 0px 0px
         - color: var(--primary-text-color)
         - white-space: normal
