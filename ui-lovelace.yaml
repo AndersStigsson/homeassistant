@@ -86,6 +86,10 @@ views:
             name: Dart wall 2
             template: light_button
             type: 'custom:button-card'
+          - entity: switch.dart_plug
+            tap_action:
+              action: toggle
+            name: Dart
       - type: "custom:light-entity-card"
         entity: light.wled
       - type: light
