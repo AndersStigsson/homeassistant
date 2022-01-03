@@ -24,16 +24,19 @@ views:
                 card_type: horizontal-stack
                 cards:
                   - type: custom:button-card
+                    template: plug_button
                     entity: group.pub
                     tap_action:
                       action: toggle
                     name: All
                   - type: custom:button-card
+                    template: plug_button
                     entity: switch.dart_plug
                     tap_action:
                       action: toggle
                     name: Dart plug
                   - type: custom:button-card
+                    template: plug_button
                     entity: switch.plug_1
                     tap_action:
                       action: toggle
