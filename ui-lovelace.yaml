@@ -79,22 +79,16 @@ views:
         card_type: vertical-stack
         cards:
           - type: entities
-          entities:
-      #- type: custom:slider-entity-row
-      #      entity: light.dart_wall_1
-          - type: 'custom:button-card'
-            entity: light.dart_wall_1
-            name: Dart wall 1
-            template: light_button
-          - type: 'custom:button-card'
-            entity: light.dart_wall_2
-            name: Dart wall 2
-            template: light_button
-          - type: custom:button-card
-            entity: switch.dart_plug
-            tap_action:
-              action: toggle
-            name: Dart plug
+            entities:
+              - type: custom:slider-entity-row
+                entity: light.dart_wall_1
+              - type: custom:slider-entity-row                
+                entity: light.dart_wall_2
+              - type: custom:button-card
+                entity: switch.dart_plug
+                tap_action:
+                  action: toggle
+                name: Dart plug
       - type: "custom:light-entity-card"
         entity: light.wled
       - type: light
