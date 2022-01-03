@@ -76,10 +76,14 @@ views:
       max_cols: 3
     cards:
       - type: custom:hui-element
-        card_type: vertical-stack
+        card_type: horizontal-stack
         cards:
           - entity: light.dart_wall_1
-            name: Kitchen table
+            name: Dart wall 1
+            template: light_button
+            type: 'custom:button-card'
+          - entity: light.dart_wall_2
+            name: Dart wall 2
             template: light_button
             type: 'custom:button-card'
       - type: "custom:light-entity-card"
