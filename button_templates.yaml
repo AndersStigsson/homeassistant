@@ -80,7 +80,7 @@
       - styles:
           card:
             - border: solid 1px var(--paper-item-icon-active-color)
-            - box-shadow: 0px 0px 10px 3px var(--paper-item-icon-active-color)
+            - box-shadow: 0px 0px 5px 3px var(--paper-item-icon-active-color)
           label:
             - color: var(--paper-item-icon-active-color)
         value: 'on'
@@ -114,7 +114,7 @@
         - grid-template-rows: 66% 
         - grid-template-columns: 66%
       icon:
-        - width: 14px
+        - width: 18px
         - padding: 0px 0px 0px 0px
         - color: var(--button-card-light-color-no-temperature)
       label:
@@ -125,7 +125,7 @@
       name:
         - justify-self: middle
         - align-self: end
-        - font-size: 10px
+        - font-size: 12px
         - padding: 0px 0px 0px 0px
         - color: var(--primary-text-color)
         - white-space: normal
