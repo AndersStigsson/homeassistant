@@ -76,7 +76,7 @@ views:
       max_cols: 3
     cards:
       - type: custom:hui-element
-        card_type: vertical_stack
+        card_type: vertical-stack
         cards:
           - entity: light.kitchen_table
             name: Kitchen table
