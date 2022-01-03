@@ -65,3 +65,10 @@ switches_lights:
   - switch.dart_plug
   - switch.stair_star_plug
   - switch.plug_1
+pub:
+  name: Pub Group
+  entities:
+  - light.dart_wall_1
+  - light.dart_wall_2
+  - switch.dart_plug
+  - switch.plug_1
