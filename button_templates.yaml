@@ -111,8 +111,8 @@
         - '--ha-card-background': 'rgba(0, 0, 0, 0)'
       grid:
         - grid-template-areas: '"i n"'
-        - grid-template-rows: min-content 
-        - grid-template-columns: min-content
+        - grid-template-rows: 66% 
+        - grid-template-columns: 66%
       icon:
         - width: 14px
         - padding: 0px 0px 0px 0px
