@@ -90,7 +90,7 @@ views:
             tap_action:
               action: toggle
             name: Dart
-            type: light
+            type: glance
       - type: "custom:light-entity-card"
         entity: light.wled
       - type: light
