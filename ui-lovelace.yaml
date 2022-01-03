@@ -1,4 +1,4 @@
-button_card_templates: !include button_templates
+button_card_templates: !include button_templates.yaml
 
 title: My awesome home
 views:
