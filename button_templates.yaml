@@ -112,7 +112,7 @@
       grid:
         - grid-template-areas: '"i n"'
         - grid-template-rows: 50% 
-        - grid-template-columns: 50%
+        - grid-template-columns: 100%
       icon:
         - width: 18px
         - padding: 0px 0px 0px 0px
