@@ -34,12 +34,12 @@ script: !include scripts.yaml
 
 #breaking_changes:
 
-telegram_bot:
-  - platform: polling
-    api_key: !secret telegram_api_key
-    allowed_chat_ids:
-      - 1053600301
-      - 1018343983
+#telegram_bot:
+#  - platform: polling
+#    api_key: !secret telegram_api_key
+#    allowed_chat_ids:
+#      - 1053600301
+#      - 1018343983
 
 camera: !include cameras.yaml
 
