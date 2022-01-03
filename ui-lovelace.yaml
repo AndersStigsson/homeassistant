@@ -80,11 +80,6 @@ views:
         cards:
           - type: entities
             entities:
-              - type: custom:button-card
-                entity: group.pub
-                tap_action:
-                  action: toggle
-                name: Group
               - type: custom:slider-entity-row
                 entity: light.dart_wall_1
                 toggle: true
@@ -96,6 +91,11 @@ views:
               - type: custom:hui-element
                 card_type: horizontal-stack
                 cards:
+                  - type: custom:button-card
+                    entity: group.pub
+                    tap_action:
+                      action: toggle
+                    name: All
                   - type: custom:button-card
                     entity: switch.dart_plug
                     tap_action:
