@@ -76,7 +76,7 @@ views:
       max_cols: 3
     cards:
       - type: custom:hui-element
-        card_type: horizontal-stack
+        card_type: vertical-stack
         cards:
           - entity: light.dart_wall_1
             name: Dart wall 1
