@@ -80,8 +80,8 @@ views:
         cards:
           - type: entities
           entities:
-          - type: custom:slider-entity-row
-            entity: light.dart_wall_1
+      #- type: custom:slider-entity-row
+      #      entity: light.dart_wall_1
           - type: 'custom:button-card'
             entity: light.dart_wall_1
             name: Dart wall 1
