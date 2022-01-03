@@ -78,7 +78,7 @@ views:
       - type: custom:hui-element
         card_type: vertical-stack
         cards:
-          - entity: light.kitchen_table
+          - entity: light.dart_wall_1
             name: Kitchen table
             template: light_button
             type: 'custom:button-card'
