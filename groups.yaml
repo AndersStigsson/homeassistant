@@ -71,4 +71,6 @@ pub:
   - light.dart_wall_1
   - light.dart_wall_2
   - switch.dart_plug
+library:
   - switch.plug_1
+  - light.wled

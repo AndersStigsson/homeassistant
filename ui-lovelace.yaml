@@ -35,12 +35,25 @@ views:
                     tap_action:
                       action: toggle
                     name: Dart plug
-                  - type: custom:button-card
-                    template: plug_button
-                    entity: switch.plug_1
-                    tap_action:
-                      action: toggle
-                    name: Pub light
+      - type: custom:hui-element
+        card_type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - type: custom:slider-entity-row
+                entity: light.wled
+                toggle: true
+                hide_when_off: true
+              - type: custom:slider-entity-row                
+                entity: switch.plug_1
+                toggle: true
+                hide_when_off: true
+              - type: custom:button-card
+                template: plug_button
+                entity: group.library
+                tap_action:
+                  action: toggle
+                name: Biblioteket
       - type: "custom:light-entity-card"
         entity: light.wled
       - type: picture-glance
@@ -89,7 +102,7 @@ views:
         - entity: switch.plug_1
           tap_action:
             action: toggle
-          name: Extra Plug
+          name: Tavla
   - title: System
     cards:
     - type: entities
