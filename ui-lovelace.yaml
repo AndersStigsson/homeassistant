@@ -48,6 +48,7 @@ views:
                 card_type: horizontal-stack
                 cards:
                   - type: custom:button-card
+                    template: plug_button
                     entity: switch.plug_1
                     toggle: true
                     hide_when_off: true
