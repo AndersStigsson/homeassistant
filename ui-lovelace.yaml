@@ -95,11 +95,11 @@ views:
         - entity: switch.christmas_tree_plug
           tap_action:
             action: toggle
-          name: Julgran
+          name: Vardagsrumsfönster
         - entity: switch.stair_star_plug
           tap_action:
             action: toggle
-          name: Trappstjärna
+          name: Trapplampa
         - entity: switch.dart_plug
           tap_action:
             action: toggle
