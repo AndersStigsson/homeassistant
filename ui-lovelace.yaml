@@ -49,16 +49,16 @@ views:
                 cards:
                   - type: custom:button-card
                     template: plug_button
-                    entity: switch.plug_1
-                    toggle: true
-                    hide_when_off: true
-                    name: Tavla
-                  - type: custom:button-card
-                    template: plug_button
                     entity: group.library
                     tap_action:
                       action: toggle
                     name: Biblioteket
+                  - type: custom:button-card
+                    template: plug_button
+                    entity: switch.plug_1
+                    toggle: true
+                    hide_when_off: true
+                    name: Tavla
       - type: "custom:light-entity-card"
         entity: light.wled
       - type: picture-glance
