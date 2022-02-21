@@ -44,16 +44,19 @@ views:
                 entity: light.wled
                 toggle: true
                 hide_when_off: true
-              - type: custom:slider-entity-row                
-                entity: switch.plug_1
-                toggle: true
-                hide_when_off: true
-              - type: custom:button-card
-                template: plug_button
-                entity: group.library
-                tap_action:
-                  action: toggle
-                name: Biblioteket
+              - type: custom:hui-element
+                card_type: horizontal-stack
+                cards:
+                  - type: custom:button-card
+                    entity: switch.plug_1
+                    toggle: true
+                    hide_when_off: true
+                  - type: custom:button-card
+                    template: plug_button
+                    entity: group.library
+                    tap_action:
+                      action: toggle
+                    name: Biblioteket
       - type: "custom:light-entity-card"
         entity: light.wled
       - type: picture-glance
