@@ -1,5 +1,5 @@
  light_button:
-    aspect_ratio: 4/3
+    aspect_ratio: 4/1
     color_type: icon
     hold_action:
       action: more-info
@@ -45,9 +45,9 @@
         - margin: 0% 0% 0% 0%
         - '--ha-card-background': 'rgba(0, 0, 0, 0)'
       grid:
-        - grid-template-areas: '"i l l" "n n n"'
-        - grid-template-rows: 33% auto
-        - grid-template-columns: 33% auto
+        - grid-template-areas: '"i n"'
+        - grid-template-rows: 1fr
+        - grid-template-columns: 1fr 1fr
       icon:
         - width: 28px
         - padding: 0px 0px 0px 0px
@@ -110,9 +110,9 @@
         - margin: 0% 0% 0% 0%
         - '--ha-card-background': 'rgba(0, 0, 0, 0)'
       grid:
-        - grid-template-areas: '"i" "n"'
-        - grid-template-rows: 50% 
-        - grid-template-columns: 100%
+        - grid-template-areas: '"i n"'
+        - grid-template-rows: 1fr
+        - grid-template-columns: 1fr 1fr
       icon:
         - width: 16px
         - padding: 0px 0px 0px 0px
