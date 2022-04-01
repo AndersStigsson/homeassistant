@@ -1,190 +1,96 @@
-#  - alias: 'Set theme at startup'
-#    trigger:
-#      platform: homeassistant
-#      event: start
-#    action:
-#      service: frontend.set_theme
-#      data:
-#        name: Dark & Green (Theme Name)
-  - id: enable_zigbee_join
-    alias: Enable Zigbee joining
-    trigger:
-      platform: state
+- id: enable_zigbee_join
+  alias: Enable Zigbee joining
+  trigger:
+    platform: state
+    entity_id: input_boolean.zigbee_permit_join
+    to: 'on'
+  action:
+  - service: mqtt.publish
+    data:
+      topic: zigbee2mqtt/bridge/config/permit_join
+      payload: 'true'
+  - service: timer.start
+    data:
+      entity_id: timer.zigbee_permit_join
+- id: disable_zigbee_join
+  alias: Disable Zigbee joining
+  trigger:
+  - entity_id: input_boolean.zigbee_permit_join
+    platform: state
+    to: 'off'
+  action:
+  - data:
+      payload: 'false'
+      topic: zigbee2mqtt/bridge/config/permit_join
+    service: mqtt.publish
+  - data:
+      entity_id: timer.zigbee_permit_join
+    service: timer.cancel
+- id: disable_zigbee_join_timer
+  alias: Disable Zigbee joining by timer
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.zigbee_permit_join
+  action:
+  - service: mqtt.publish
+    data:
+      topic: zigbee2mqtt/bridge/config/permit_join
+      payload: 'false'
+  - service: input_boolean.turn_off
+    data:
       entity_id: input_boolean.zigbee_permit_join
-      to: 'on'
-    action:
-    - service: mqtt.publish
-      data:
-        topic: zigbee2mqtt/bridge/config/permit_join
-        payload: 'true'
-    - service: timer.start
-      data:
-        entity_id: timer.zigbee_permit_join
-  - id: disable_zigbee_join
-    alias: Disable Zigbee joining
-    trigger:
-    - entity_id: input_boolean.zigbee_permit_join
-      platform: state
-      to: 'off'
-    action:
-    - data:
-        payload: 'false'
-        topic: zigbee2mqtt/bridge/config/permit_join
-      service: mqtt.publish
-    - data:
-        entity_id: timer.zigbee_permit_join
-      service: timer.cancel
-  - id: disable_zigbee_join_timer
-    alias: Disable Zigbee joining by timer
-    trigger:
-    - platform: event
-      event_type: timer.finished
-      event_data:
-        entity_id: timer.zigbee_permit_join
-    action:
-    - service: mqtt.publish
-      data:
-        topic: zigbee2mqtt/bridge/config/permit_join
-        payload: 'false'
-    - service: input_boolean.turn_off
-      data:
-        entity_id: input_boolean.zigbee_permit_join
-        #  - id: send_notification_amanda
-        #    trigger:
-        #    - platform: state
-        #      entity_id: device_tracker.amanda
-        #      from: "home"
-        #      to: "not_home"
-        #    condition:
-        #      condition: and
-        #      conditions:
-        #      - condition: state
-        #        entity_id: device_tracker.anders
-        #        state: "not_home"
-        #      - condition: state
-        #        entity_id: group.all_lights
-        #        state: "on" 
-        #    action:
-        #    - service: notify.notifyamanda
-        #      data:
-        #        message: "Hejdå Amanda! Du glömde väl inte släcka ljusen?"
-        #        data:
-        #          inline_keyboard:
-        #            - 'Lights Out:/lightsout'
-        #            - 'Ignore:/removekeyboard'
-        #  - id: send_notification_anders  
-        #    trigger:
-        #    - platform: state
-        #      entity_id: device_tracker.anders
-        #      from: "home"
-        #      to: "not_home"
-        #    condition:
-        #      condition: and
-        #      conditions:
-        #      - condition: state
-        #        entity_id: device_tracker.amanda
-        #        state: "not_home"
-        #      - condition: state
-        #        entity_id: group.all_lights
-        #        state: "on"
-        #    action:
-        #    - service: notify.notifyanders
-        #      data:
-        #        message: "Hejdå Anders! Du glömde väl inte släcka ljusen?"
-        #        data:
-        #          inline_keyboard:
-        #            - 'Lights Out:/lightsout'
-        #            - 'Ignore:/removekeyboard'
-        #
-        #  - id: 'telegramremoveinline'
-        #    alias: 'Telegram callback to remove keyboard'
-        #    hide_entity: true
-        #    trigger:
-        #      platform: event
-        #      event_type: telegram_callback
-        #      event_data:
-        #        data: '/removekeyboard'
-        #    action:
-        #    - service: telegram_bot.answer_callback_query
-        #      data_template:
-        #        callback_query_id: '{{ trigger.event.data.id }}'
-        #        message: 'OK'
-        #    - service: telegram_bot.edit_replymarkup
-        #      data_template:
-        #        message_id: '{{ trigger.event.data.message.message_id }}'
-        #        chat_id: '{{ trigger.event.data.user_id }}'
-        #        inline_keyboard: []
-        #  - id: 'telegramlightsout'
-        #    alias: 'Telegram callback to turn off lights'
-        #    hide_entity: true
-        #    trigger:
-        #      platform: event
-        #      event_type: telegram_callback
-        #      event_data:
-        #        data: '/lightsout'
-        #    action:
-        #      - service: telegram_bot.answer_callback_query
-        #        data_template:
-        #          callback_query_id: '{{ trigger.event.data.id }}'
-        #          message: 'Lights Off'
-        #      - service: light.turn_off
-        #        data:
-        #          entity_id: group.all_lights
-        #      - service: telegram_bot.edit_replymarkup
-        #        data_template:
-        #          message_id: '{{ trigger.event.data.message.message_id }}'
-        #          chat_id: '{{ trigger.event.data.user_id }}'
-        #          inline_keyboard: []
-  - id: 'rocky_theme'
-    alias: 'Play Rocky Theme when cleaning done'
-    trigger:
-      platform: template
-      value_template: "{{ is_state('vacuum.roborock_vacuum_s5','returning') }}"
-    action:
-      - service: media_player.select_source
-        data:
-          entity_id: media_player.spotify
-          source: "Anders's Echo Plus"
-      - service: media_player.play_media
-        data:
-          entity_id: media_player.spotify
-          media_content_type: "music"
-          media_content_id: "spotify:track:6C2PfemHQul77DVpnvuAIs"
-      - service: media_player.select_source
-        data:
-          entity_id: media_player.spotify
-          source: "Anders's Echo Plus"
-  - id: 'christmas_tree_on_workday'
-    alias: 'Turn on christmas tree at specific times'
-    trigger:
-      platform: time
-      at: 
-        - "06:30"
-        - "16:30"
-    condition:
-      condition: state
-      entity_id: 'binary_sensor.workday_sensor'
-      state: 'on'
-    action:
-      - service: switch.turn_on
-        target:
-          entity_id: 
-            - switch.christmas_tree_plug
-            - switch.stair_star_plug
-  - id: 'christmas_tree_off_workday'
-    alias: 'Turn off christmas tree at specific times'
-    trigger:
-      platform: time
-      at: 
-        - "07:30"
-        - "23:00"
-    condition:
-      condition: state
-      entity_id: 'binary_sensor.workday_sensor'
-      state: 'on'
-    action:
-      - service: switch.turn_off
-        target:
-          entity_id: 
-            - switch.christmas_tree_plug
-            - switch.stair_star_plug
+- id: rocky_theme
+  alias: Play Rocky Theme when cleaning done
+  trigger:
+    platform: template
+    value_template: '{{ is_state(''vacuum.roborock_vacuum_s5'',''returning'') }}'
+  action:
+  - service: media_player.select_source
+    data:
+      entity_id: media_player.spotify
+      source: Anders's Echo Plus
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.spotify
+      media_content_type: music
+      media_content_id: spotify:track:6C2PfemHQul77DVpnvuAIs
+  - service: media_player.select_source
+    data:
+      entity_id: media_player.spotify
+      source: Anders's Echo Plus
+- id: christmas_tree_on_workday
+  alias: Turn on christmas tree at specific times
+  trigger:
+  - platform: time
+    at:
+    - 06:30
+    - '18:00'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id:
+      - switch.christmas_tree_plug
+      - switch.stair_star_plug
+- id: christmas_tree_off_workday
+  alias: Turn off christmas tree at specific times
+  trigger:
+  - platform: time
+    at:
+    - 07:30
+    - '22:00'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id:
+      - switch.christmas_tree_plug
+      - switch.stair_star_plug
