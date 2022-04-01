@@ -157,10 +157,11 @@
   - id: 'christmas_tree_on_workday'
     alias: 'Turn on christmas tree at specific times'
     trigger:
-      platform: time
-      at: 
-        - "06:30"
-        - "16:30"
+      - platform: time
+        at:
+          - "06:30"
+      - platform: sun
+        event: sunset
     condition:
       condition: state
       entity_id: 'binary_sensor.workday_sensor'
