@@ -99,7 +99,6 @@
     target:
       entity_id:
       - switch.christmas_tree_plug
-      - switch.stair_star_plug
 - id: christmas_tree_off_workday
   alias: Turn off christmas tree at specific times
   trigger:
@@ -116,4 +115,3 @@
     target:
       entity_id:
       - switch.christmas_tree_plug
-      - switch.stair_star_plug
