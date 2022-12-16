@@ -29,7 +29,7 @@ homeassistant:
     #    - "/home/homeassistant/rpi_pictures/"
 
 group: !include groups.yaml
-automation: !include_dir_merge_list automation
+automation: !include automations.yaml
 script: !include scripts.yaml
 
 #breaking_changes:
