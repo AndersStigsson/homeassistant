@@ -99,7 +99,7 @@ views:
         - entity: switch.stair_star_plug
           tap_action:
             action: toggle
-          name: Trapplampa
+          name: Julgran
         - entity: switch.dart_plug
           tap_action:
             action: toggle
