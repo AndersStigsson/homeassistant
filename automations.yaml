@@ -132,7 +132,7 @@
       entity_id:
       - switch.christmas_tree_plug
 - id: christmas_tree_off_weekend
-  alias: Turn off christmas tree at weekends
+  alias: Turn off christmas tree weekend
   trigger:
   - platform: time
     at:
