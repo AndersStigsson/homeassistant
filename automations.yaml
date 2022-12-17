@@ -120,7 +120,7 @@
   trigger:
   - platform: time
     at:
-    - 10:00
+    - '10:00'
     - '23:00'
   condition:
   - condition: state
