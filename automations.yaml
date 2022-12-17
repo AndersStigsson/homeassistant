@@ -121,7 +121,7 @@
   - platform: time
     at:
     - 08:00
-    - 15:00
+    - '15:00'
   condition:
   - condition: state
     entity_id: binary_sensor.workday_sensor
