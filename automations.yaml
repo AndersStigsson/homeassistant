@@ -65,7 +65,7 @@
   trigger:
   - platform: time
     at:
-    - 06:30
+    - 08:00
   action:
   - service: switch.turn_on
     target:
@@ -76,7 +76,7 @@
   trigger:
   - platform: time
     at:
-    - '21:00'
+    - '20:00'
   action:
   - service: switch.turn_off
     target:
