@@ -95,7 +95,7 @@ views:
         - entity: switch.christmas_tree_plug
           tap_action:
             action: toggle
-          name: Julgran
+          name: Växt
         - entity: switch.stair_star_plug
           tap_action:
             action: toggle
