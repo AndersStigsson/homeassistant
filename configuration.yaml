@@ -92,7 +92,3 @@ timer:
     #0x00158d0002303654
 alexa:
   smart_home:
-binary_sensor:
-  - platform: workday
-    country: SE
-
