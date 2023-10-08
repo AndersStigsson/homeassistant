@@ -75,6 +75,8 @@ mqtt:
     topic: 'hass/status'
     payload: 'offline'
   light: !include lights.yaml
+  switch: !include switches.yaml
+  sensor: !include sensors.yaml
 
 input_boolean:
   zigbee_permit_join:
@@ -88,8 +90,6 @@ timer:
     duration: 600 # Updated this to the number of seconds you wish
 
     #0x00158d0002303654
-sensor: !include sensors.yaml
-switch: !include switches.yaml
 alexa:
   smart_home:
 binary_sensor:
