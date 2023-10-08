@@ -8,6 +8,7 @@ http:
    trusted_proxies: 
      - 172.20.0.2
      - 172.20.0.3
+     - 172.20.0.6
    #base_url: 0.0.0.0:8123
    ip_ban_enabled: false
 
