@@ -1,6 +1,5 @@
-  - platform: mqtt
+  - name: Dart Wall 1
     schema: json
-    name: Dart Wall 1
     state_topic: "zigbee2mqtt/0x0017880104a1c1f4"
     availability_topic: "zigbee2mqtt/bridge/state"
     #value_template: "{{ value_json.state }}"
@@ -10,9 +9,8 @@
     brightness: true
     brightness_scale: 254
     color_temp: true
-  - platform: mqtt
+  - name: Dart Wall 2
     schema: json
-    name: Dart Wall 2
     state_topic: "zigbee2mqtt/0x0017880104a1cb01"
     availability_topic: "zigbee2mqtt/bridge/state"
     #value_template: "{{ value_json.state }}"
