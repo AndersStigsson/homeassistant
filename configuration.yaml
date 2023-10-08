@@ -62,21 +62,21 @@ lovelace:
     - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
       type: module
 mqtt:
-  broker: "172.17.0.1" # This will have to be your mqtt broker
-  discovery: true
-  port: 1883
-  username: !secret mqtt_username
-  password: !secret mqtt_password
-  client_id: homeassistant_1
-  birth_message:
-    topic: 'hass/status'
-    payload: 'online'
-  will_message:
-    topic: 'hass/status'
-    payload: 'offline'
   light: !include lights.yaml
   switch: !include switches.yaml
   sensor: !include sensors.yaml
+  # broker: "172.17.0.1" # This will have to be your mqtt broker
+  # discovery: true
+  # port: 1883
+  # username: !secret mqtt_username
+  # password: !secret mqtt_password
+  # client_id: homeassistant_1
+  # birth_message:
+  #   topic: 'hass/status'
+  #   payload: 'online'
+  # will_message:
+  #   topic: 'hass/status'
+  #   payload: 'offline'
 
 input_boolean:
   zigbee_permit_join:
