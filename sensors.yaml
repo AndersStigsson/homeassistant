@@ -3,5 +3,4 @@
     icon: mdi:router-wireless
   - name: Wine cellar
     state_topic: "zigbee2mqtt/0x0017880104a1c1f4"
-    availability_topic: "zigbee2mqtt/bridge/state"
     icon: mdi:thermometer
