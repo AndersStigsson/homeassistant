@@ -45,7 +45,7 @@ script: !include scripts.yaml
 camera: !include cameras.yaml
 
 lovelace:
-  mode: yaml
+        #mode: yaml
   resources:
     - url: /hacsfiles/light-entity-card/light-entity-card.js
       type: module

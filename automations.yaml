@@ -65,23 +65,29 @@
   trigger:
   - platform: time
     at:
-    - 08:00
+    - 06:45
+  - platform: time
+    at: '17:00'
   action:
   - service: switch.turn_on
     target:
       entity_id:
       - switch.stair_star_plug
+    data: {}
 - id: plant_light_off
   alias: Turn off plant_light
   trigger:
   - platform: time
     at:
-    - '20:00'
+    - '22:00'
+  - platform: time
+    at: 07:45
   action:
   - service: switch.turn_off
     target:
       entity_id:
       - switch.stair_star_plug
+    data: {}
 - id: christmas_tree_on_workday
   alias: Turn on christmas tree at specific times
   trigger:
