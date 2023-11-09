@@ -5,9 +5,11 @@
     state_topic: "zigbee2mqtt/0xa4c138a38c941a8b"
     icon: mdi:thermometer
     unit_of_measurement: "°C"
+    suggested_display_precision: 1
     value_template: "{{ value_json.temperature }}"
   - name: Wine cellar Humidity
     state_topic: "zigbee2mqtt/0xa4c138a38c941a8b"
     icon: mdi:thermometer
     unit_of_measurement: "%"
+    suggested_display_precision: 1
     value_template: "{{ value_json.humidity }}"
