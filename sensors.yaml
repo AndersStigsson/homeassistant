@@ -1,6 +1,13 @@
   - name: Bridge state
     state_topic: "zigbee2mqtt/bridge/state"
     icon: mdi:router-wireless
-  - name: Wine cellar
+  - name: Wine cellar Temp
     state_topic: "zigbee2mqtt/0xa4c138a38c941a8b"
     icon: mdi:thermometer
+    unit_of_measurement: "°C"
+    value_template: "{{ value_json.temperature }}"
+  - name: Wine cellar Humidity
+    state_topic: "zigbee2mqtt/0xa4c138a38c941a8b"
+    icon: mdi:thermometer
+    unit_of_measurement: "%"
+    value_template: "{{ value_json.humidity }}"
