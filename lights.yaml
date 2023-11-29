@@ -20,3 +20,47 @@
     brightness: true
     brightness_scale: 254
     color_temp: true
+  - name: Star Salong 1
+    schema: json
+    state_topic: "zigbee2mqtt/0x086bd7fffe2f9e3d"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    #value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/0x086bd7fffe2f9e3d/set"
+    #payload_off: "OFF"
+    #payload_on: "ON"
+    brightness: true
+    brightness_scale: 254
+    color_temp: true
+  - name: Star Salong 2
+    schema: json
+    state_topic: "zigbee2mqtt/0x086bd7fffe2059ff"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    #value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/0x086bd7fffe2059ff/set"
+    #payload_off: "OFF"
+    #payload_on: "ON"
+    brightness: true
+    brightness_scale: 254
+    color_temp: true
+  - name: Star Bar
+    schema: json
+    state_topic: "zigbee2mqtt/0x086bd7fffe052d65"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    #value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/0x086bd7fffe052d65/set"
+    #payload_off: "OFF"
+    #payload_on: "ON"
+    brightness: true
+    brightness_scale: 254
+    color_temp: true
+  - name: Star Stair
+    schema: json
+    state_topic: "zigbee2mqtt/0x086bd7fffe052070"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    #value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/0x086bd7fffe052070/set"
+    #payload_off: "OFF"
+    #payload_on: "ON"
+    brightness: true
+    brightness_scale: 254
+    color_temp: true
