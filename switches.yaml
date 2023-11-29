@@ -26,3 +26,10 @@
     payload_on: "ON"
     value_template: "{{ value_json.state }}"
     command_topic: "zigbee2mqtt/0x0c4314fffe175938/set"
+  - name: Bedroom Plug
+    state_topic: "zigbee2mqtt/0xccccccfffeb3d4e3"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    payload_off: "OFF"
+    payload_on: "ON"
+    value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/0xccccccfffeb3d4e3/set"
