@@ -13,3 +13,27 @@
     unit_of_measurement: "%"
     suggested_display_precision: 1
     value_template: "{{ value_json.humidity }}"
+  - name: Top floor Temp
+    state_topic: "zigbee2mqtt/0xa4c13890e2ce0380"
+    icon: mdi:thermometer
+    unit_of_measurement: "°C"
+    suggested_display_precision: 1
+    value_template: "{{ value_json.temperature }}"
+  - name: Top floor Humidity
+    state_topic: "zigbee2mqtt/0xa4c13890e2ce0380"
+    icon: mdi:thermometer
+    unit_of_measurement: "%"
+    suggested_display_precision: 1
+    value_template: "{{ value_json.humidity }}"
+  - name: Gym Temp
+    state_topic: "zigbee2mqtt/0xa4c138c055b11376"
+    icon: mdi:thermometer
+    unit_of_measurement: "°C"
+    suggested_display_precision: 1
+    value_template: "{{ value_json.temperature }}"
+  - name: Gym Humidity
+    state_topic: "zigbee2mqtt/0xa4c138c055b11376"
+    icon: mdi:thermometer
+    unit_of_measurement: "%"
+    suggested_display_precision: 1
+    value_template: "{{ value_json.humidity }}"
