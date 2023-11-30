@@ -61,33 +61,119 @@
       entity_id: media_player.spotify
       source: Anders's Echo Plus
 - id: plant_light_on
-  alias: Turn on plant_light
+  alias: Turn off lights
   trigger:
   - platform: time
-    at:
-    - 06:45
+    at: 06:45
+    id: weekday_morning
   - platform: time
-    at: '17:00'
+    at: '16:00'
+    id: weekday_afternoon
   action:
-  - service: switch.turn_on
-    target:
-      entity_id:
-      - switch.stair_star_plug
-    data: {}
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: weekday_morning
+      - condition: time
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.stair_star_plug
+        data: {}
+      - service: light.turn_on
+        target:
+          entity_id:
+          - light.star_stair
+          - light.star_salong_2
+          - light.star_salong_1
+          - light.star_bar
+        data: {}
+    - conditions:
+      - condition: trigger
+        id: weekday_afternoon
+      - condition: time
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      sequence:
+      - service: switch.turn_on
+        target:
+          entity_id: switch.stair_star_plug
+        data: {}
+      - service: light.turn_on
+        target:
+          entity_id:
+          - light.star_stair
+          - light.star_salong_2
+          - light.star_salong_1
+          - light.star_bar
+        data: {}
 - id: plant_light_off
-  alias: Turn off plant_light
+  alias: Turn on lights
   trigger:
   - platform: time
-    at:
-    - '22:00'
+    at: 07:30
+    id: weekday_morning
   - platform: time
-    at: 07:45
+    at: '22:30'
+    id: weekday_afternoon
   action:
-  - service: switch.turn_off
-    target:
-      entity_id:
-      - switch.stair_star_plug
-    data: {}
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: weekday_morning
+      - condition: time
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      sequence:
+      - service: switch.turn_off
+        target:
+          entity_id: switch.stair_star_plug
+        data: {}
+      - service: light.turn_off
+        target:
+          entity_id:
+          - light.star_stair
+          - light.star_salong_2
+          - light.star_salong_1
+          - light.star_bar
+        data: {}
+    - conditions:
+      - condition: trigger
+        id: weekday_afternoon
+      - condition: time
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      sequence:
+      - service: switch.turn_off
+        target:
+          entity_id: switch.stair_star_plug
+        data: {}
+      - service: light.turn_off
+        target:
+          entity_id:
+          - light.star_stair
+          - light.star_salong_2
+          - light.star_salong_1
+          - light.star_bar
+        data: {}
 - id: christmas_tree_on_workday
   alias: Turn on christmas tree at specific times
   trigger:
