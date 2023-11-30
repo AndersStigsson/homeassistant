@@ -232,6 +232,21 @@
         data: {}
     - conditions:
       - condition: trigger
+        id: weekday_morning_bedroom
+      - condition: time
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      sequence:
+      - service: switch.turn_off
+        target:
+          entity_id: switch.bedroom_plug
+        data: {}
+    - conditions:
+      - condition: trigger
         id: weekday_afternoon
       - condition: time
         weekday:
