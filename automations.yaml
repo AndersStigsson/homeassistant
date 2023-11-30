@@ -247,6 +247,26 @@
         data: {}
     - conditions:
       - condition: trigger
+        id: weekend_off
+      - condition: time
+        weekday:
+        - sat
+        - sun
+      sequence:
+      - service: switch.turn_off
+        target:
+          entity_id: switch.stair_star_plug
+        data: {}
+      - service: light.turn_off
+        target:
+          entity_id:
+          - light.star_stair
+          - light.star_salong_2
+          - light.star_salong_1
+          - light.star_bar
+        data: {}
+    - conditions:
+      - condition: trigger
         id: weekday_afternoon
       - condition: time
         weekday:
