@@ -92,3 +92,10 @@ timer:
     #0x00158d0002303654
 alexa:
   smart_home:
+
+influxdb:
+  api_version: 2
+  host: 10.19.99.109
+  token: !secret influxdb_token
+  bucket: homeassistant
+  organization: 7cc970354a730b3b
