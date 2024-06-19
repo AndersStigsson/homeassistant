@@ -64,3 +64,58 @@
     brightness: true
     brightness_scale: 254
     color_temp: true
+  - name: Living Room 1
+    schema: json
+    state_topic: "zigbee2mqtt/0x90395efffe644fd6"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    #value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/0x90395efffe644fd6/set"
+    #payload_off: "OFF"
+    #payload_on: "ON"
+    brightness: true
+    brightness_scale: 254
+    color_temp: false
+  - name: Living Room 2
+    schema: json
+    state_topic: "zigbee2mqtt/0x60b647fffe3c64f1"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    #value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/0x60b647fffe3c64f1/set"
+    #payload_off: "OFF"
+    #payload_on: "ON"
+    brightness: true
+    brightness_scale: 254
+    color_temp: false
+  - name: Kitchen
+    schema: json
+    state_topic: "zigbee2mqtt/0xa46dd4fffee8331b"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    #value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/0xa46dd4fffee8331b/set"
+    #payload_off: "OFF"
+    #payload_on: "ON"
+    brightness: true
+    brightness_scale: 254
+    color_temp: false
+  - name: Space ship
+    schema: json
+    state_topic: "zigbee2mqtt/0xa46dd4fffee80fae"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    #value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/0xa46dd4fffee80fae/set"
+    #payload_off: "OFF"
+    #payload_on: "ON"
+    brightness: true
+    brightness_scale: 254
+    color_temp: false
+  - name: Dinner room
+    schema: json
+    state_topic: "zigbee2mqtt/0xa46dd4fffee7c092"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    #value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/0xa46dd4fffee7c092/set"
+    #payload_off: "OFF"
+    #payload_on: "ON"
+    brightness: true
+    brightness_scale: 254
+    color_temp: false
