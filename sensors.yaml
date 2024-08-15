@@ -49,6 +49,12 @@
     unit_of_measurement: "%"
     suggested_display_precision: 1
     value_template: "{{ value_json.humidity }}"
+  - name: Sonoff Wine cellar battery
+    state_topic: "zigbee2mqtt/0x3c2ef5fffed61072"
+    icon: mdi:battery-unknown
+    unit_of_measurement: "%"
+    suggested_display_precision: 1
+    value_template: "{{ value_json.battery }}"
   - name: Sonoff Top floor temp
     state_topic: "zigbee2mqtt/0x142d41fffe2f2fcb"
     icon: mdi:thermometer
@@ -61,3 +67,9 @@
     unit_of_measurement: "%"
     suggested_display_precision: 1
     value_template: "{{ value_json.humidity }}"
+  - name: Sonoff Top floor battery
+    state_topic: "zigbee2mqtt/0x142d41fffe2f2fcb"
+    icon: mdi:battery-unknown
+    unit_of_measurement: "%"
+    suggested_display_precision: 1
+    value_template: "{{ value_json.battery }}"
