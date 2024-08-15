@@ -49,4 +49,15 @@
     unit_of_measurement: "%"
     suggested_display_precision: 1
     value_template: "{{ value_json.humidity }}"
-    
+  - name: Sonoff Top floor temp
+    state_topic: "zigbee2mqtt/0x142d41fffe2f2fcb"
+    icon: mdi:thermometer
+    unit_of_measurement: "°C"
+    suggested_display_precision: 1
+    value_template: "{{ value_json.temperature }}"
+  - name: Sonoff Top floor humidity
+    state_topic: "zigbee2mqtt/0x142d41fffe2f2fcb"
+    icon: mdi:water-percent
+    unit_of_measurement: "%"
+    suggested_display_precision: 1
+    value_template: "{{ value_json.humidity }}"
