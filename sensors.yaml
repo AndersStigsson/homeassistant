@@ -37,3 +37,16 @@
     unit_of_measurement: "%"
     suggested_display_precision: 1
     value_template: "{{ value_json.humidity }}"
+  - name: Sonoff Wine cellar temp
+    state_topic: "zigbee2mqtt/0x3c2ef5fffed61072"
+    icon: mdi:thermometer
+    unit_of_measurement: "°C"
+    suggested_display_precision: 1
+    value_template: "{{ value_json.temperature }}"
+  - name: Sonoff Wine cellar humidity
+    state_topic: "zigbee2mqtt/0x3c2ef5fffed61072"
+    icon: mdi:water-percent
+    unit_of_measurement: "%"
+    suggested_display_precision: 1
+    value_template: "{{ value_json.humidity }}"
+    
