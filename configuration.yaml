@@ -95,7 +95,16 @@ alexa:
 
 influxdb:
   api_version: 2
+  ssl: false
   host: 10.19.99.109
+  port: 8086
   token: !secret influxdb_token
-  bucket: homeassistant
   organization: 7cc970354a730b3b
+  bucket: homeassistant
+  tags:
+    source: HA
+  tags_attributes:
+    - friendly_name
+  include:
+    domains:
+      - sensor

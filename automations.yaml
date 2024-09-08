@@ -408,3 +408,51 @@
     target:
       entity_id:
       - switch.christmas_tree_plug
+- id: '1723791301974'
+  alias: Wine cellar heat alert
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id:
+    - sensor.sonoff_wine_cellar_temp
+    above: 20
+  condition: []
+  action:
+  - service: notify.mobile_app_iphone_13_pro
+    metadata: {}
+    data:
+      message: Wine cellar temperature is {{states('sensor.sonoff_wine_cellar_temp')}}
+      title: Wine cellar too hot
+  mode: single
+- id: '1723791401700'
+  alias: Wine cellar cold alert
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id:
+    - sensor.sonoff_wine_cellar_temp
+    below: 12
+  condition: []
+  action:
+  - service: notify.mobile_app_iphone_13_pro
+    metadata: {}
+    data:
+      message: Wine cellar temperature is {{states('sensor.sonoff_wine_cellar_temp')}}
+      title: Wine cellar too cold
+  mode: single
+- id: '1723791513908'
+  alias: Wine cellar battery alert
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id:
+    - sensor.sonoff_wine_cellar_battery
+    below: 30
+  condition: []
+  action:
+  - service: notify.mobile_app_iphone_13_pro
+    metadata: {}
+    data:
+      message: Wine cellar battery is {{states('sensor.sonoff_wine_cellar_battery')}}
+      title: Wine cellar battery low
+  mode: single
