@@ -75,4 +75,4 @@
     value_template: "{{ value_json.battery }}"
   - name: IKEA Controller
     state_topic: "zigbee2mqtt/0x5cc7c1fffea49500"
-
+    value_template: "{{ value_json.action }}"
