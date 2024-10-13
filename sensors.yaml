@@ -74,6 +74,5 @@
     suggested_display_precision: 1
     value_template: "{{ value_json.battery }}"
   - name: IKEA Controller
-    schema: json
     state_topic: "zigbee2mqtt/0x5cc7c1fffea49500"
 
