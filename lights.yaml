@@ -8,7 +8,6 @@
     #payload_on: "ON"
     brightness: true
     brightness_scale: 254
-    color_temp: true
   - name: Dart Wall 2
     schema: json
     state_topic: "zigbee2mqtt/0x0017880104a1cb01"
@@ -19,7 +18,6 @@
     #payload_on: "ON"
     brightness: true
     brightness_scale: 254
-    color_temp: true
   - name: Star Salong 1
     schema: json
     state_topic: "zigbee2mqtt/0x086bd7fffe2f9e3d"
@@ -30,7 +28,6 @@
     #payload_on: "ON"
     brightness: true
     brightness_scale: 254
-    color_temp: true
   - name: Star Salong 2
     schema: json
     state_topic: "zigbee2mqtt/0x086bd7fffe2059ff"
@@ -41,7 +38,6 @@
     #payload_on: "ON"
     brightness: true
     brightness_scale: 254
-    color_temp: true
   - name: Star Bar
     schema: json
     state_topic: "zigbee2mqtt/0x086bd7fffe052d65"
@@ -52,7 +48,6 @@
     #payload_on: "ON"
     brightness: true
     brightness_scale: 254
-    color_temp: true
   - name: Star Stair
     schema: json
     state_topic: "zigbee2mqtt/0x086bd7fffe052070"
@@ -63,7 +58,6 @@
     #payload_on: "ON"
     brightness: true
     brightness_scale: 254
-    color_temp: true
   - name: Living Room 1
     schema: json
     state_topic: "zigbee2mqtt/0x90395efffe644fd6"
@@ -74,7 +68,6 @@
     #payload_on: "ON"
     brightness: true
     brightness_scale: 254
-    color_temp: false
   - name: Living Room 2
     schema: json
     state_topic: "zigbee2mqtt/0x60b647fffe3c64f1"
@@ -85,7 +78,6 @@
     #payload_on: "ON"
     brightness: true
     brightness_scale: 254
-    color_temp: false
   - name: Kitchen
     schema: json
     state_topic: "zigbee2mqtt/0xa46dd4fffee8331b"
@@ -96,7 +88,6 @@
     #payload_on: "ON"
     brightness: true
     brightness_scale: 254
-    color_temp: false
   - name: Space ship
     schema: json
     state_topic: "zigbee2mqtt/0xa46dd4fffee80fae"
@@ -107,7 +98,6 @@
     #payload_on: "ON"
     brightness: true
     brightness_scale: 254
-    color_temp: false
   - name: Dinner room
     schema: json
     state_topic: "zigbee2mqtt/0xa46dd4fffee7c092"
@@ -118,4 +108,10 @@
     #payload_on: "ON"
     brightness: true
     brightness_scale: 254
-    color_temp: false
+  - name: Nursery
+    schema: json
+    state_topic: "zigbee2mqtt/0xe8e07efffe1c865a"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    command_topic: "zigbee2mqtt/0xe8e07efffe1c865a/set"
+    brightness: true
+    supported_color_modes: ["color_temp", "xy"]
