@@ -115,3 +115,8 @@
     command_topic: "zigbee2mqtt/0xe8e07efffe1c865a/set"
     brightness: true
     supported_color_modes: ["color_temp", "xy"]
+  - name: IKEA Controller
+    schema: json
+    state_topic: "zigbee2mqtt/0x5cc7c1fffea49500"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    command_topic: "zigbee2mqtt/0x5cc7c1fffea49500/set"
